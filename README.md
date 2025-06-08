@@ -112,12 +112,9 @@ Main.java open ho jayega
 
 
 
-
-
-
+src/main/resources create index.html,style.css,logo.png    ya documents meh se copy and paste
 
 index.html
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -143,7 +140,6 @@ index.html
 
 
 style.css
-
 
 body {
     font-family: Arial, sans-serif;
