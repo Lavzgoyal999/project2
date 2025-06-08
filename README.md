@@ -1,4 +1,18 @@
-pom.xml 
+OPEN IntelliJ IDEA
+=
+new
+project
+java      project2
+
+
+          maven
+
+                      create
+
+
+
+
+pom.xml               meh yeh dalna
 
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -6,8 +20,8 @@ pom.xml
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.example</groupId>
-    <artifactId>devopsmaven</artifactId>
+    <groupId>org.example</groupId>
+    <artifactId>MAVEN-2</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -15,6 +29,7 @@ pom.xml
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+    
     <dependencies>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
@@ -28,27 +43,76 @@ pom.xml
             <scope>test</scope>
         </dependency>
     </dependencies>
-
-
-
+    
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.2.0</version>
+                <executions>
+                    <execution>
+                        <phase>prepare-package</phase> <!-- Before packaging -->
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.basedir}/docs</outputDirectory> <!-- Deploy to /docs folder -->
+                            <resources>
+                                <resource>
+                                    <directory>src/main/resources</directory> <!-- Copy all files in src/main/resources -->
+                                    <includes>
+                                        <include>**/*</include>
+                                    </includes>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <!-- Specify the main class to be executed -->
+                    <archive>
+                        <manifestEntries>
+                            <Main-Class>org.example.Main</Main-Class> <!-- Replace with your mainclass path -->
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
 
 
-Main.java
+src/main/java
+right click
+new
+package
+org.example
 
+copy ctrl+c
 
 package org.example;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
         System.out.printf("Hello and welcome!");
-
     }
 }
+
+
+right click on org.example 
+paste
+Main.java open ho jayega
+
+
+
+
 
 
 
@@ -187,6 +251,13 @@ WebPageTest.java open ho jayega
 
 right click WebPageTest.java
 run
+
+in TERMINAL TYPE
+
+ mvn clean package 
+ java -jar  .\target\MAVEN-2-1.0-SNAPSHOT.jar            VO TARGET MEH JO JAR FILE HAI NA USKA PATH YA /target likh kar tab press karo name will come then enter
+
+ 
 
 DONE
 
