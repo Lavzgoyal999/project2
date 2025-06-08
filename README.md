@@ -116,5 +116,11 @@ footer {
     bottom: 0;
 }
 
+TERMINAL 
 
+git init 
+git add .               git status
+git commit -m "Initial commit"
+git remote add origin "repo url" 
+git push -u origin master
 
