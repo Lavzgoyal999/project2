@@ -119,8 +119,24 @@ footer {
 TERMINAL 
 
 git init 
-git add .               git status
-git commit -m "Initial commit"
-git remote add origin "repo url" 
-git push -u origin master
+git add .                                                          git status
+git commit -m "Initial commit"                
+git remote add origin "<your-repository-url>"                      git remote add origin https://github.com/Lavzgoyal999/project2.git
+                                                                   git remote show origin
+git push -u origin master --->x
+
+
+
+mvn clean install 
+git add docs/*
+git commit -m "Deploy site to GitHub Pages"
+git push origin master
+
+
+
+src/test/java   
+right click
+new
+java class
+WebPageTest.java
 
